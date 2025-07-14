@@ -1,0 +1,67 @@
+.weather-display {
+    position: relative;
+    width: 275px;
+    max-width: 100%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    border: none;
+    background: #f0f8ff;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+
+.weather-display:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.weather-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.weather-text {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.weather-icon {
+    width: 80px;
+    height: 80px;
+    margin-top: 10px;
+}
+
+.remove-btn {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-size: 1.2rem;
+    color: #ff4d4f;
+    cursor: pointer;
+    z-index: 1;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.remove-btn:hover {
+    transform: scale(1.2);
+    color: #d9363e;
+}
+
+.animate-weather {
+    transition: transform 0.4s ease, background-color 0.4s ease;
+}
+
+.animate-weather.updated {
+    background-color: #e0ffe0;  /* Light green to indicate update */
+    transform: scale(1.05);
+}
+
+
+/* Synced fadeIn animation with ease-in-out and 0.5s */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}

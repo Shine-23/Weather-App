@@ -1,0 +1,84 @@
+.container {
+    margin-top: 20px;
+}
+
+/* Weather Cards Grid */
+.weather-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;  /* Center items instead of flex-start */
+    margin-top: 20px;
+}
+
+/* Weather Card Styling */
+.weather-display {
+    width: 275px;
+    max-width: 100%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    border: none;
+    background: #f0f8ff;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.weather-display:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.weather-icon {
+    display: block;
+    margin: 10px auto;
+    width: 80px;
+    height: 80px;
+}
+
+.weather-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.weather-text {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Search Bar */
+.search-bar {
+    margin-bottom: 20px;
+}
+
+/* Search Container Animation & Position */
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: all 0.5s ease-in-out;
+}
+
+.search-container.shrink {
+    height: auto;
+    margin: 30px auto 20px auto;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.search-container.top {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: auto;
+}
+
+
+
+/* Responsive Enhancements */
+@media (max-width: 768px) {
+    .weather-grid {
+        justify-content: center;
+    }
+}
