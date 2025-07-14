@@ -1,12 +1,37 @@
-# React + Vite
+# The Weather App - Frontend
+A React.js frontend application to search, view, and track real-time weather updates for cities worldwide, powered by a Spring Boot backend and WebSocket updates.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+##  Features
+- City Search:
+Search for any city and view current weather (temperature, feels like, humidity, wind, description, icon).
 
-Currently, two official plugins are available:
+- Real-Time Updates:
+Weather information updates automatically in real-time via WebSocket connection — no need to refresh!
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Multiple Cities Tracking:
+Subscribe to multiple cities at once and view their weather side-by-side.
 
-## Expanding the ESLint configuration
+- Unsubscribe Option:
+Remove any city's card to unsubscribe from live updates for that city.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Responsive & Animated UI:
+  - Cards laid out responsively in a grid.
+  - Live update animation on each card.
+  - Search bar transitions from center to top after first search.
+ 
+## Technologies
+- React.js + Vite
+- Bootstrap + Custom CSS
+- Axios
+- STOMP.js + WebSocket
+
+## Backend Integration
+- Initial Weather Data:
+`GET http://localhost:8080/api/weather?cityName=CityName`
+
+- WebSocket Connection:
+Connects to `http://localhost:8080/ws/weather` using STOMP protocol.
+
+- Subscribed Updates:
+Receives data via `/topic/weather/{city}` channels.
+
